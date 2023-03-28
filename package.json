@@ -10,7 +10,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~13.2.0",
+    "@angular/animations": "^13.3.12",
     "@angular/common": "~13.2.0",
     "@angular/compiler": "~13.2.0",
     "@angular/core": "~13.2.0",
@@ -18,8 +18,11 @@
     "@angular/platform-browser": "~13.2.0",
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
+    "jquery": "^3.6.4",
+    "ngx-toastr": "^14.3.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
+    "uikit": "^3.16.12",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {

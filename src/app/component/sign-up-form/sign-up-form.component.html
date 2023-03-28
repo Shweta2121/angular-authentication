@@ -1,0 +1,123 @@
+<div appTheme class="">
+    <div class="h-min-full uk-flex uk-flex-middle portal bglogin" uk-grid>
+      <div class="uk-width-2-3" >
+        <div class="h-min-full">
+          <img src="https://images.unsplash.com/photo-1566888596782-c7f41cc184c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=2134&q=80" class="img-fluid" style="min-height:100%;"/>
+        </div>
+      </div>
+      <div class="uk-width-1-3 bglogin uk-padding">
+        <div class="uk-text-left uk-padding-small uk-padding-remove-left">
+          <img class="" src="assets/img1.jpg" style="height: 25%; width:25%">
+          <h1 class="uk-padding-remove uk-margin-remove uk-text-bold">Sign up</h1>
+          <p class="uk-padding-remove uk-margin-remove">Already have an account ? <span><a (click)="redirectTologin()">Sign in</a></span></p>
+          </div>
+    
+            <div class="uk-card uk-card-default ">
+        
+            <div class="uk-card-body">
+              <form [formGroup]="signUpForm" (ngSubmit)="submitHandler()">
+        
+                <div class="uk-margin mt-0">
+                  <div *ngIf="error" class="uk-alert-danger" uk-alert>
+                    <a class="uk-alert-close" uk-close></a>
+                    <p>{{error}}</p>
+                  </div>
+                </div>
+                <div uk-grid>
+                <div class="uk-width-1-2">
+                    <label class="uk-form-label uk-bold font-16" for="form-stacked-text">First Name</label>
+                    <div class="uk-form-controls">
+                      <input class="uk-input" type="text" placeholder="first name"
+                        formControlName="user_firstname" style="text-transform:lowercase" required>
+                    </div>
+                    <ng-container *ngIf="!signUpForm.controls.user_firstname.valid && signUpForm.controls.user_firstname.touched">
+                      <small *ngIf="signUpForm.controls.user_firstname.errors?.required" class="uk-text-danger">First Name is
+                        required</small>
+                    </ng-container>
+                  </div>
+                  <div class="uk-width-1-2">
+                    <label class="uk-form-label uk-bold font-16" for="form-stacked-text">Last Name</label>
+                    <div class="uk-form-controls">
+                      <input class="uk-input" type="text" placeholder="last name"
+                        formControlName="user_lastname" style="text-transform:lowercase" required>
+                    </div>
+                    <ng-container *ngIf="!signUpForm.controls.user_lastname.valid && signUpForm.controls.user_lastname.touched">
+                      <small *ngIf="signUpForm.controls.user_lastname.errors?.required" class="uk-text-danger">Last Name is
+                        required</small>
+                    </ng-container>
+                  </div>
+                  </div>
+                  <div uk-grid>
+                    <div class="uk-width-1-2">
+                        <label class="uk-form-label uk-bold font-16" for="form-stacked-text">Email</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input " type="email" placeholder="Email"
+                        formControlName="user_email" style="text-transform:lowercase" required>
+                    </div>
+                    <ng-container *ngIf="!signUpForm.controls.user_email.valid && signUpForm.controls.user_email.touched">
+                      <small *ngIf="signUpForm.controls.user_email.errors?.required" class="uk-text-danger">Email is
+                        required</small>
+                      <small *ngIf="signUpForm.controls.user_email.errors?.email" class="uk-text-danger">Invalid
+                        Email</small>
+                    </ng-container>
+                  </div>
+                  <div class="uk-width-1-2">
+                    <label class="uk-form-label uk-bold font-16" for="form-stacked-text">Password</label>
+                    <div class="uk-form-controls">
+                        <input class="uk-input " type="password" placeholder="password"
+                        formControlName="user_password" required>
+                    </div>
+                    <ng-container *ngIf="!signUpForm.controls.user_password.valid && signUpForm.controls.user_password.touched">
+                      <small *ngIf="signUpForm.controls.user_password.errors?.required" class="uk-text-danger">Password is
+                        required</small>
+                    </ng-container>
+                  </div>
+                  </div>
+                  <div uk-grid>
+                    <div class="uk-width-1-2">
+                        <label class="uk-form-label uk-bold font-16" for="form-stacked-text">Phone</label>
+                    <div class="uk-form-controls">
+                        <input class="uk-input " type="text" placeholder="phone"
+                        formControlName="user_phone" style="text-transform:lowercase" required>
+                    </div>
+                    <ng-container *ngIf="!signUpForm.controls.user_phone.valid && signUpForm.controls.user_phone.touched">
+                      <small *ngIf="signUpForm.controls.user_phone.errors?.required" class="uk-text-danger">Phone Number is
+                        required</small>
+                    </ng-container>
+                  </div>
+                  <div class="uk-width-1-2">
+                    <label class="uk-form-label uk-bold font-16" for="form-stacked-text">City</label>
+                    <div class="uk-form-controls">
+                        <input class="uk-input " type="text" placeholder="last name"
+                        formControlName="user_city" style="text-transform:lowercase" required>
+                    </div>
+                    <ng-container *ngIf="!signUpForm.controls.user_city.valid && signUpForm.controls.user_city.touched">
+                      <small *ngIf="signUpForm.controls.user_city.errors?.required" class="uk-text-danger">City is
+                        required</small>
+                    </ng-container>
+                  </div>
+                  </div>
+                  <div class="uk-margin">
+                    <label class="uk-form-label uk-bold font-16" for="form-stacked-text">Zip Code</label>
+                    <div class="uk-inline uk-width-1-1">
+                      <input class="uk-input uk-form-large uk-form-width-large uk-width-1-1"  type="text" placeholder="zip code"
+                        formControlName="user_zipcode" style="text-transform:lowercase" required>
+                    </div>
+                    <ng-container *ngIf="!signUpForm.controls.user_zipcode.valid && signUpForm.controls.user_zipcode.touched">
+                      <small *ngIf="signUpForm.controls.user_zipcode.errors?.required" class="uk-text-danger">Zip Code is
+                        required</small>
+                    </ng-container>
+                  </div>
+          <div class="uk-margin">
+            <div><label><input class="uk-checkbox" type="checkbox">I agree to the <span class="colortext">Terms of Service</span>and <span class="colortext"> Privacy Policy</span></label></div> 
+            </div>
+                <div class="uk-margin login-button uk-margin-medium-top">
+                  <button  type="submit" class="uk-button uk-width-1-1 uk-button-large uk-button-primary"
+                    [disabled]="isLoading">Create Your free account</button>
+                </div>
+              </form>
+            </div>
+          </div>
+      </div>
+    </div>
+    </div>

@@ -22,18 +22,24 @@
             </div>
         </div>
     </nav>
-    <div class="uk-flex uk-flex-center uk-margin" *ngFor="let user of userData">
-        <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-width-1-2@m uk-width-1-2@s">
-            <h3 class="uk-card-title">{{user.user_firstname}} {{user.user_lastname}}</h3>
-           <div>
-            <ul class="uk-margin-remove uk-padding-remove">
-                <li>{{user.user_email}}</li>
-                <li>{{user.user_phone}}</li>
-                <li>{{user.user_city}}</li>
-                <li>{{user.user_zipcode}}</li>
-            </ul>
-           </div>
+    <div *ngFor="let user of userData">
+        <div class="uk-margin uk-text-center">
+            <h1 class="uk-padding">Welcome {{user.user_firstname}} {{user.user_lastname}}</h1>
+        </div>
+        <div class="uk-flex uk-flex-center uk-margin " >
+            <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-width-1-2@m uk-width-1-2@s">
+                <h3 class="uk-card-title ">{{user.user_firstname}} {{user.user_lastname}}</h3>
+               <div>
+                <ul class="uk-margin-remove uk-padding-remove">
+                    <li>{{user.user_email}}</li>
+                    <li>{{user.user_phone}}</li>
+                    <li>{{user.user_city}}</li>
+                    <li>{{user.user_zipcode}}</li>
+                </ul>
+               </div>
+            </div>
         </div>
     </div>
+ 
 
 </div>

@@ -1,12 +1,12 @@
 <div class="main-container">
-    <nav class="uk-navbar-container uk-card-default">
+    <nav class="uk-navbar-container uk-card-default" style="background: lightgrey;;">
         <div class="uk-container ">
             <div uk-navbar>
     
                 <div class="uk-navbar-left">
     
                     <ul class="uk-navbar-nav">
-                        <li class="uk-active"><a href=".#">Home</a></li>
+                        <li class="uk-active uk-text-bold"><a href=".#">Home</a></li>
                     </ul>
     
                 </div>
@@ -14,7 +14,7 @@
     
                     <ul class="uk-navbar-nav">
                         <li>
-                            <a (click)="logout()">Log out</a>
+                            <button class="uk-button uk-border-pill" (click)="logout()">Log out</button>
                         </li>
                     </ul>
                 </div>
@@ -24,7 +24,7 @@
     </nav>
     <div *ngFor="let user of userData">
         <div class="uk-margin uk-text-center">
-            <h1 class="uk-padding">Welcome {{user.user_firstname}} {{user.user_lastname}}</h1>
+            <h1 class="uk-padding">Welcome <span class="uk-text-bold capitalize">{{user.user_firstname}} {{user.user_lastname}}</span></h1>
         </div>
         <div class="uk-flex uk-flex-center uk-margin " >
             <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-width-1-2@m uk-width-1-2@s">

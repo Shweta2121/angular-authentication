@@ -24,7 +24,7 @@ export class AuthGuard implements CanActivate {
           this.auth.state = currentState;
           const userData = this.auth.currentUser;
           if (!userData) {
-            // Session does NOT EXISTS so redirect to public app login page
+            // localStorage does NOT EXISTS so redirect to public app login page
             this.router.navigate(['/login']);
           }
         }

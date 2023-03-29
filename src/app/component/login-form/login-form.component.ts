@@ -13,7 +13,6 @@ import { AuthService } from 'src/app/service/auth.service';
 export class LoginFormComponent implements OnInit {
   isLoading: boolean = false;
   loginForm: FormGroup;
-  error: string;
 
   constructor(private fb:FormBuilder,
     private authService:AuthService,

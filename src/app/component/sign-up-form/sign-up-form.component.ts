@@ -13,8 +13,6 @@ import { AuthService } from 'src/app/service/auth.service';
 export class SignUpFormComponent implements OnInit {
   isLoading: boolean = false;
   signUpForm: FormGroup;
-  error: string;
-  success: string;
 
   constructor(private fb:FormBuilder,
     private authService:AuthService,
@@ -44,8 +42,6 @@ export class SignUpFormComponent implements OnInit {
         console.log(user)
         if(user.status){
           this.isLoading = false;
-          this.success = user.message;
-          this.error = "";
           this.signUpForm.reset();
           this.router.navigate(['/login']);
         }else{

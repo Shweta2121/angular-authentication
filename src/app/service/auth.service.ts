@@ -20,7 +20,7 @@ export class AuthService {
   login(user: any): Observable<any> {
     return this.http.post<any>(`${APIConstants.LOGIN}`, user).pipe(
       map(user => {
-        sessionStorage.setItem('user', JSON.stringify(user.user_data));
+        localStorage.setItem("user", JSON.stringify( user.user_data));
         this.authState$.next(true);
 
         return user;
@@ -40,12 +40,12 @@ export class AuthService {
    * Check whether the user is authenticated or not
    */
     isAuthenticated(): boolean {
-      return !!sessionStorage.getItem('user');
+      return !!localStorage.getItem('user');
     }
 
       // Logout of application
   logout(companyName?: string) {
-    sessionStorage.clear();  
+    localStorage.clear();  
       this.router.navigate(['/login'])
         .then(() => {
           window.location.reload();
@@ -54,7 +54,7 @@ export class AuthService {
 
     // Get Current User 
     get currentUser(): any {
-      return sessionStorage.getItem('user');
+      return localStorage.getItem('user');
     }
   
 
